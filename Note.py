@@ -17,8 +17,8 @@ class Note:
         return 'Зметка №{0} \n' \
                'Дата создания: {1} \n' \
                'Заголовок: {2} \n' \
-               'Содержание заметки: \n' \
-               '{3}\n'.format(self.id, self.date_time, self.title, self.text)
+               'Содержание заметки: {3}\n' \
+            .format(self.id, self.date_time, self.title, self.text)
 
     def get_id(self):
         return self.id

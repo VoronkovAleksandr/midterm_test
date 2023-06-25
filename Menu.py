@@ -1,4 +1,5 @@
 from WorkMenu import WorkMenu
+from Service import Service
 
 INPUT_ERROR = 'Вы ввели неверные данные'
 
@@ -13,10 +14,12 @@ def check_command(num_command: int, menu: WorkMenu):
 class Menu:
     start: bool
     menu: WorkMenu
+    service: Service
 
-    def __init__(self):
+    def __init__(self, service: Service):
         self.start = True
-        self.menu = WorkMenu(self)
+        self.service = service
+        self.menu = WorkMenu(self, service)
 
     def start_me(self) -> None:
         while self.start:
@@ -28,7 +31,7 @@ class Menu:
 
     def execute(self):
         try:
-            num_command = int(input())
+            num_command = int(input('Введите номер действия: '))
             if check_command(num_command, self.menu):
                 self.menu.execute(num_command - 1)
         except:

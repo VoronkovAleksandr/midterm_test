@@ -26,9 +26,18 @@ class Notes:
         self.notes[index_note] = new_note
         return 'Заметка обновлена'
 
-    def delete_note(self, index_note) -> str:
-        self.notes.remove(index_note)
+    def delete_note(self, index_note):
+        self.notes.pop(index_note)
         return 'Заметка удалена'
 
     def length(self):
         return len(self.notes)
+
+    def find_note_by_id(self, id_note: int) -> Note:
+        for note in self.notes:
+            if note.get_id() == id_note: return note
+
+    def get_index_note_by_id(self, id_note):
+        for i in range (0, len(self.notes)):
+            if self.notes[i].get_id() == id_note: return i
+        return -1

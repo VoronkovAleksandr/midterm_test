@@ -3,16 +3,16 @@ from Commands import *
 class WorkMenu:
     command_list: list
 
-    def __init__(self, menu: object):
+    def __init__(self, menu, service):
         self.command_list = []
-        self.command_list.append(AddNote(menu))
-        self.command_list.append(ReadNote(menu))
-        self.command_list.append(EditNote(menu))
-        self.command_list.append(DeleteNote(menu))
-        self.command_list.append(ReadNotes(menu))
-        self.command_list.append(SaveNotes(menu))
-        self.command_list.append(LoadNotes(menu))
-        self.command_list.append(Finish(menu))
+        self.command_list.append(AddNote(menu, service))
+        self.command_list.append(ReadNote(menu, service))
+        self.command_list.append(EditNote(menu, service))
+        self.command_list.append(DeleteNote(menu, service))
+        self.command_list.append(ReadNotes(menu, service))
+        self.command_list.append(SaveNotes(menu, service))
+        self.command_list.append(LoadNotes(menu, service))
+        self.command_list.append(Finish(menu, service))
 
     def print(self) -> str:
         menu = ''
