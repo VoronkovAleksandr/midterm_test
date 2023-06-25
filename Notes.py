@@ -41,3 +41,8 @@ class Notes:
         for i in range (0, len(self.notes)):
             if self.notes[i].get_id() == id_note: return i
         return -1
+    def get_notes_as_notes(self):
+        return self.notes
+
+    def clear_notes(self):
+        self.notes.clear()

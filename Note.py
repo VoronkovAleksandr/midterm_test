@@ -7,9 +7,9 @@ class Note:
     title: str
     text: str
 
-    def __init__(self, id: int, date_time: datetime, title: str, text: str):
+    def __init__(self, id: int, date_time: str, title: str, text: str):
         self.id = id
-        self.date_time = date_time.strftime("%d-%m-%y %H:%M")
+        self.date_time = date_time
         self.title = title
         self.text = text
 

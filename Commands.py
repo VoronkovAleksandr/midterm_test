@@ -13,7 +13,7 @@ class Command:
 
 
 class AddNote(Command):
-    my_description = 'Добвить заметку'
+    my_description = 'Добавить заметку'
 
     def execute(self):
         print('Добавить заметку')
